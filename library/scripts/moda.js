@@ -12,12 +12,27 @@
 
     $.fn.moda = function(options){
 
+        console.log(this[0].href);
+
         var settings = $.extend({
 
             overlay: true,
             responsive: true
 
         }, options);
+
+        var wrapper = function(){
+
+            $('body').append('<div id="moda"></div>');
+
+        };
+
+        this.click(function(e){
+            e.preventDefault();
+            wrapper();
+        });
+
+        //return wrapper;
 
     };
 
